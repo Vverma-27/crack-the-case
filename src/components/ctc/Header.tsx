@@ -61,7 +61,6 @@ const Header = () => {
                       <TooltipContent
                         side="right"
                         className="bg-primary text-primary-foreground px-3 py-1.5 rounded-md"
-                        forceMount={mobileTooltipOpen === "murder"}
                       >
                         Coming Soon
                       </TooltipContent>
@@ -84,7 +83,6 @@ const Header = () => {
                       <TooltipContent
                         side="right"
                         className="bg-primary text-primary-foreground px-3 py-1.5 rounded-md"
-                        forceMount={mobileTooltipOpen === "heists"}
                       >
                         Coming Soon
                       </TooltipContent>
@@ -107,7 +105,6 @@ const Header = () => {
                       <TooltipContent
                         side="right"
                         className="bg-primary text-primary-foreground px-3 py-1.5 rounded-md"
-                        forceMount={mobileTooltipOpen === "coming-soon"}
                       >
                         Coming Soon
                       </TooltipContent>

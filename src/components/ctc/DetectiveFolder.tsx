@@ -86,7 +86,11 @@ const useIsMobile = () => {
 
 // Optimized texture loader with memoization
 const TextureLoader = () => {
-  const [textures, setTextures] = useState({
+  const [textures, setTextures] = useState<{
+    paper: THREE.Texture | null;
+    stamp: THREE.Texture | null;
+    shield: THREE.Texture | null;
+  }>({
     paper: null,
     stamp: null,
     shield: null,
@@ -121,7 +125,7 @@ const TextureLoader = () => {
   return textures;
 };
 
-const FolderModel = ({ isMobile }) => {
+const FolderModel = ({ isMobile }: { isMobile: boolean }) => {
   const folderRef = useRef<THREE.Group>(null);
   const frontCoverRef = useRef<THREE.Mesh>(null);
   const backCoverRef = useRef<THREE.Mesh>(null);
@@ -676,7 +680,13 @@ const FolderModel = ({ isMobile }) => {
 };
 
 // Add this as a separate component for reusability
-const PaperClips = ({ isOpen, contentOpacity }) => {
+const PaperClips = ({
+  isOpen,
+  contentOpacity,
+}: {
+  isOpen: boolean;
+  contentOpacity: number;
+}) => {
   const clipBaseStyles = {
     color: "#888888",
     metalness: 1,
